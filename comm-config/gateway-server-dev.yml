@@ -4,9 +4,6 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 server:
   port: 8769
-spring:
-  application:
-    name: gateway-server
 
 hystrix:
   command:
