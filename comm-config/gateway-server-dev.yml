@@ -2,9 +2,11 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8769
 spring:
   application:
-    name: service-zuul
+    name: gateway-server
 
 hystrix:
   command:
@@ -24,6 +26,9 @@ zuul:
     connect-timeout-millis: 20000
     socket-timeout-millis: 20000
   routes:
+    api-a:
+      path: /api-a/**
+      serviceId: service-feign
     api-b:
         path: /api-b/**
         serviceId: service-hello
