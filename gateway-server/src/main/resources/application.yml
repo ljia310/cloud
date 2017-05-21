@@ -6,3 +6,11 @@ spring:
       uri: http://127.0.0.1:8888
       label: master
       profile: dev
+
+
+management:
+  security:
+    enabled: false
+
+
+
