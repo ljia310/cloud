@@ -95,3 +95,18 @@
 <version>2.2.2</version>
 </dependency>
 ```
+### 其它
+#### API网关动态路由更新
+  1. 刷新配置
+  ```
+  post http://gateway-server:port/refresh
+  ```
+  2. 重新加载路由
+  ```
+  get/post http://gateway-server:port/routes
+  ```
+  > 
+  > 需要关闭默认管理权限
+  > management:  
+  >    security:
+  >     enabled: false
