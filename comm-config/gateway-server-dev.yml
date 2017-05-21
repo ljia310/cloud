@@ -28,4 +28,4 @@ zuul:
       serviceId: service-feign
     api-b:
         path: /api-b/**
-        serviceId: service-hello
+        serviceId: srv-server
