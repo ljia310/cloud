@@ -24,8 +24,11 @@ zuul:
   ignoredServices: '*'
   routes:
     api-a:
-      path: /api-a/**
+      path: /api-1/**
       serviceId: service-feign
     api-b:
         path: /api-b/**
+        serviceId: srv-server
+    api-c:
+        path: /api-c/**
         serviceId: srv-server
