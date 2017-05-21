@@ -29,8 +29,8 @@ zuul:
         path: /api-b/**
         serviceId: service-hello
     baidu:
-      path: /baidu/*
+      path: /baidu/**
       url: www.baidu.com
     csdn:
-      path: /csdn/*
+      path: /csdn/**
       url: www.csdn.net
