@@ -95,3 +95,14 @@
 <version>2.2.2</version>
 </dependency>
 ```
+
+### 其它
+1. 刷新配置，重新启动，加载路由
+```
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+```
+1. /refresh post
+2. /routes   get post
