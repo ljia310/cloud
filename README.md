@@ -97,12 +97,12 @@
 ```
 
 ### 其它
-1. 刷新配置，重新启动，加载路由
-```
-<dependency>
-<groupId>org.springframework.boot</groupId>
-<artifactId>spring-boot-starter-actuator</artifactId>
-</dependency>
-```
-1. /refresh post
-2. /routes   get post
+1. API网关动态路由更新
+   1. 刷新配置
+     ```
+     post http://gateway-server:port/refresh
+     ```
+   2. 重新加载路由
+   ```
+   get/post http://gateway-server:port/routes
+   ```
