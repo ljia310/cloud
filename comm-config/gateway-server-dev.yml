@@ -40,12 +40,12 @@ security:
       serviceId: ${PREFIX:}resource
 
 zuul:
-  dummy-service: /dummy/**
-  host:
-    connect-timeout-millis: 20000
-    socket-timeout-millis: 20000
-  ignoredServices: '*'
   routes:
+    dummy-service: /dummy/**
+    uaa-service:
+      sensitiveHeaders:
+      path: /uaa/**
+      stripPrefix: false
     api-a:
       path: /api-1/**
       serviceId: service-feign
@@ -55,8 +55,4 @@ zuul:
     api-c:
         path: /api-c/**
         serviceId: srv-server
-    uaa-service:
-      sensitiveHeaders:
-      path: /uaa/**
-      stripPrefix: false
-  add-proxy-headers: true
+   add-proxy-headers: true
