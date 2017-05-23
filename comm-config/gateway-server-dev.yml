@@ -51,7 +51,7 @@ zuul:
       serviceId: service-feign
     api-b:
         path: /api-b/**
-        serviceId: srv-server
+        serviceId: srv1-server
     api-c:
         path: /api-c/**
         serviceId: srv-server
