@@ -4,9 +4,10 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 server:
   port: 9999
-
+  context-path: /uaa
 
 security:
   oauth2:
     resource:
       filter-order: 3
+  
