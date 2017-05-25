@@ -11,16 +11,16 @@ import java.security.Principal;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-@EnableResourceServer
 @RestController
+@EnableResourceServer//必须要
 public class UaaServerApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(UaaServerApplication.class, args);
-	}
 
 	@RequestMapping("/user")
 	public Principal user(Principal user){
 		return user;
+	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(UaaServerApplication.class, args);
 	}
 }

@@ -33,17 +33,17 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
-                .withClient("client_id") // 配置默认的client
-                .secret("client_secret")
-                .authorizedGrantTypes(
-                        "password", "refresh_token")
-                .scopes("read").autoApprove("read")
-                .and()
                 .withClient("app_id") // 配置默认的client
                 .secret("app_secret")
                 .authorizedGrantTypes(
+                        "password", "refresh_token")
+                .scopes("app").autoApprove("app")
+                .and()
+                .withClient("service_id") // 配置默认的client
+                .secret("service_secret")
+                .authorizedGrantTypes(
                         "client_credentials", "refresh_token")
-                .scopes("read").autoApprove("read");
+                .scopes("service").autoApprove("service");
     }
 
     @Override
