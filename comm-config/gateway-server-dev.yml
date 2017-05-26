@@ -18,13 +18,15 @@ ribbon:
   ConnectTimeout: 20000
 
 zuul:
-  ignored-services: '*'
+  ignoredservices: '*'
   routes:
-      auth-server:
-        path: /uaa/**
-        serviceId: uaa-server
-        sensitiveHeaders:  #必须要
-        strip-prefix: false
-    api-b:
-        path: /api-b/**
-        serviceId: srv1-server
+    auth-server:
+      path: /uaa/**
+      serviceId: uaa-server
+      sensitive-headers:
+      stripprefix: false
+    app:
+      path: /app/**
+      serviceId: srv1-server
+      stripprefix: false
+      sensitive-headers:

@@ -8,9 +8,5 @@ spring:
       profile: dev
 
 
-management:
-  security:
-    enabled: false
-
 
 

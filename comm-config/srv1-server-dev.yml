@@ -5,9 +5,9 @@ eureka:
 server:
   port: 8762
   
-feign:
-  hystrix:
-    enabled: true
+hystrix:
+  enabled: true
+  shareSecurityContext: true
     
 spring:
   zipkin:

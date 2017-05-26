@@ -9,9 +9,10 @@ eureka:
 server:
   port: 8763
 
-feign:
-  hystrix:
-    enabled: false
+
+hystrix:
+  enabled: true
+  shareSecurityContext: true
 
 
 security:

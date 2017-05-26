@@ -6,10 +6,12 @@ import feign.RequestTemplate;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.oauth2.resource.UserInfoRestTemplateFactory;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails;
 
@@ -25,7 +27,7 @@ public class Srv2ServerApplication {
 
     // Resource Server Token Relay
     // https://stackoverflow.com/questions/29439653/spring-cloud-feign-with-oauth2resttemplate
-
+    // https://stackoverflow.com/questions/35265585/trying-to-use-oauth2-token-with-feign-client-and-hystrix
     @Bean
     public RequestInterceptor requestTokenBearerInterceptor() {
         return new RequestInterceptor() {
@@ -33,10 +35,8 @@ public class Srv2ServerApplication {
             public void apply(RequestTemplate requestTemplate) {
                 OAuth2AuthenticationDetails details = (OAuth2AuthenticationDetails)
                         SecurityContextHolder.getContext().getAuthentication().getDetails();
-
                 requestTemplate.header("Authorization", "bearer " + details.getTokenValue());
             }
         };
     }
-
 }
